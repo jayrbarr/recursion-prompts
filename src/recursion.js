@@ -20,10 +20,13 @@ var sum = function(array) {
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+    var temp = array.flat(Infinity);
+    return (temp.length > 1) ? arraySum([].concat(temp.slice(1,-1), [temp[0]+temp[temp.length-1]])) : (temp.length !== 0) ? temp[0] : 0;
 };
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+    return (Math.abs(n)-2 >= 0) ? isEven(Math.abs(n)-2) : (Math.abs(n)) ? false : true;
 };
 
 // 5. Sum all integers below a given integer.
