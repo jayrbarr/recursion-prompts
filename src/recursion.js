@@ -93,6 +93,7 @@ var multiply = function(x, y) {
 // 13. Write a function that divides two numbers without using the / operator or
 // Math methods to arrive at an approximate quotient (ignore decimal endings).
 var divide = function(x, y) {
+    return (y === 0) ? NaN : (x === 0) ? 0 : (x>0) ? (y>0) ? (x>=y) ? 1 + divide(x-y, y) : 0 : (x>=0-y) ? 1 + divide(x+y,y) : 0 : (y>0) ? (0-x>=y) ? 1 + divide(x+y, y) : 0 : (x<=y) ? 1 + divide(x-y,y) : 0 ;
 };
 
 // 14. Find the greatest common divisor (gcd) of two positive numbers. The GCD of two
