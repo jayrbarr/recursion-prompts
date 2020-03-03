@@ -15,13 +15,13 @@ var factorial = function(n) {
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 var sum = function(array) {
-    return (array.length > 1) ? sum([].concat(array.slice(1,-1), [array[0]+array[array.length-1]])) : (array.length !== 0) ? array[0] : 0;
+    return (array.length > 1) ? sum([].concat(array.slice(1,-1), [array[0]+array[array.length-1]])) : (array.length) ? array[0] : 0;
 };
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
     var temp = array.flat(Infinity);
-    return (temp.length > 1) ? arraySum([].concat(temp.slice(1,-1), [temp[0]+temp[temp.length-1]])) : (temp.length !== 0) ? temp[0] : 0;
+    return (temp.length > 1) ? arraySum([].concat(temp.slice(1,-1), [temp[0]+temp[temp.length-1]])) : (temp.length) ? temp[0] : 0;
 };
 
 // 4. Check if a number is even.
